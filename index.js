@@ -1,3 +1,5 @@
+console.log('Hello world!')
+
 const sesam = {
     initialize() {
         console.log('\n' + `%c[service] sesam.js initialize() running! \n` + ' ', 'color: #00d400; font-weight: bold');
