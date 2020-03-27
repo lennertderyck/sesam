@@ -8,18 +8,21 @@ Use Sesam to create easy collapsing items on your site
 
 **1. Install package**
 
-`npm i sesam-collapse`
+```shell
+    npm i sesam-collapse
+```
 
 **2. Import package**
 
 ```javascript
-import {sesam} from 'sesam-collapse';
+    import {sesam} from 'sesam-collapse';
 ```
 
 ### With a CDN
+
 Just copy paste this link-tag in your site's head
 ```html
-<link rel="stylesheet" href="https://sesam.git.lennertderyck.be/index.js">
+    <link rel="stylesheet" href="https://sesam.git.lennertderyck.be/index.js">
 ```
 
 ## Use
@@ -37,7 +40,9 @@ Possibilities are infinite!
 
 ### **1. Define collapse target element** let the script know which element will be collapsed
 
-`data-sesam-target="placeNameHere"`
+```html
+    data-sesam-target="placeNameHere"
+```
 
 ```html
     <div data-sesam-target="placeNameHere">
@@ -60,13 +65,17 @@ If you want that another Sesam target is hidden when you click a trigger, just d
 
 **Add this to the parent element**
 
-`data-sesam-group="groupNameHere"`
+```html
+    data-sesam-group="groupNameHere"
+```
 
 **And define the parent for the children elements**
 
 This has to be added to the target element!
 
-`data-sesam-parent="groupNameHere"`
+```html
+    data-sesam-parent="groupNameHere"
+```
 
 ```html
     <div data-sesam-group="groupNameHere">
