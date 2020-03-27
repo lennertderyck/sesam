@@ -1,9 +1,7 @@
 ![sesam banner](https://res.cloudinary.com/lennertderyck/image/upload/v1585256935/BANNER_SESAM_za3b6v.svg)
-
-# sesam
 Use Sesam to create easy collapsing items on your site
 
-## Install
+# Install
 ### With NPM
 
 **1. Install package**
@@ -25,7 +23,7 @@ Just copy paste this link-tag in your site's head
     <link rel="stylesheet" href="https://sesam.git.lennertderyck.be/index.js">
 ```
 
-## Use
+# Use
 The only thing Sesam will do, is adding, removing or toggle classes. You have to write the needed css to let something happen on screen.
 
 So sesam can be used in various ways.
