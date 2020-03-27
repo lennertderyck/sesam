@@ -9,13 +9,13 @@ Use Sesam to create easy collapsing items on your site
 **1. Install package**
 
 ```shell
-    npm i sesam-collapse
+npm i sesam-collapse
 ```
 
 **2. Import package**
 
 ```javascript
-    import {sesam} from 'sesam-collapse';
+import {sesam} from 'sesam-collapse';
 ```
 
 ### With a CDN
@@ -41,13 +41,13 @@ Possibilities are infinite!
 ### **1. Define collapse target element** let the script know which element will be collapsed
 
 ```html
-    data-sesam-target="placeNameHere"
+data-sesam-target="placeNameHere"
 ```
 
 ```html
-    <div data-sesam-target="placeNameHere">
-        <p>Some content</p>
-    </div>
+<div data-sesam-target="placeNameHere">
+    <p>Some content</p>
+</div>
 ```
 
 ### **2. Define collapse trigger element(s)** Define which element will trigger the action. Multiple triggers can be defined, just add the same markup.
@@ -55,9 +55,9 @@ Possibilities are infinite!
 `data-sesam-trigger="placeNameHere"`
 
 ```html
-    <button data-sesam-trigger="placeNameHere">
-        Show / hide
-    </button>
+<button data-sesam-trigger="placeNameHere">
+    Show / hide
+</button>
 ```
 
 ### **Extra! Hide other sesam targets when element is triggered**
@@ -66,7 +66,7 @@ If you want that another Sesam target is hidden when you click a trigger, just d
 **Add this to the parent element**
 
 ```html
-    data-sesam-group="groupNameHere"
+data-sesam-group="groupNameHere"
 ```
 
 **And define the parent for the children elements**
@@ -74,28 +74,28 @@ If you want that another Sesam target is hidden when you click a trigger, just d
 This has to be added to the target element!
 
 ```html
-    data-sesam-parent="groupNameHere"
+data-sesam-parent="groupNameHere"
 ```
 
 ```html
-    <div data-sesam-group="groupNameHere">
-        <div>
-            <button data-sesam-trigger="collapseFirst">
-                Show / hide
-            </button>
-            <div data-sesam-target="collapseFirst" data-sesam-parent="groupNameHere">
-                <p>Some content</p>
-            </div>
-        </div>
-        <div>
-            <button data-sesam-trigger="collapseSecond">
-                Show / hide
-            </button>
-            <div data-sesam-target="collapseSecond" data-sesam-parent="groupNameHere">
-                <p>Some content</p>
-            </div>
+<div data-sesam-group="groupNameHere">
+    <div>
+        <button data-sesam-trigger="collapseFirst">
+            Show / hide
+        </button>
+        <div data-sesam-target="collapseFirst" data-sesam-parent="groupNameHere">
+            <p>Some content</p>
         </div>
     </div>
+    <div>
+        <button data-sesam-trigger="collapseSecond">
+            Show / hide
+        </button>
+        <div data-sesam-target="collapseSecond" data-sesam-parent="groupNameHere">
+            <p>Some content</p>
+        </div>
+    </div>
+</div>
 ```
 
 
