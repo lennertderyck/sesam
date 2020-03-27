@@ -1,5 +1,5 @@
 ![sesam banner](https://res.cloudinary.com/lennertderyck/image/upload/v1585256935/BANNER_SESAM_za3b6v.svg)
-Use Sesam to create easy collapsing items on your site
+<p style="text-align: center;">Use Sesam to create easy collapsing items on your site</p>
 
 # Install
 ### With NPM
