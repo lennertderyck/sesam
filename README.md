@@ -36,7 +36,8 @@ So sesam can be used in various ways.
 
 Possibilities are infinite!
 
-### **1. Define collapse target element** let the script know which element will be collapsed
+### **1. Define collapse target element** 
+Let the script know which element will be collapsed
 
 ```html
 data-sesam-target="placeNameHere"
@@ -48,7 +49,8 @@ data-sesam-target="placeNameHere"
 </div>
 ```
 
-### **2. Define collapse trigger element(s)** Define which element will trigger the action. Multiple triggers can be defined, just add the same markup.
+### **2. Define collapse trigger element(s)** 
+Define which element will trigger the action. Multiple triggers can be defined, just add the same markup.
 
 ```html
 data-sesam-trigger="placeNameHere"
