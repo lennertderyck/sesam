@@ -54,7 +54,7 @@ Define which element will trigger the action. Multiple triggers can be defined, 
 
 ```html
 data-sesam-trigger="placeNameHere"
-`
+```
 
 ```html
 <button data-sesam-trigger="placeNameHere">
