@@ -35,12 +35,9 @@ So sesam can be used in various ways.
 
 Possibilities are infinite!
 
-### Define collapse target element
-Let the script know which element will be collapsed
+### **1. Define collapse target element** let the script know which element will be collapsed
 
 `data-sesam-target="placeNameHere"`
-
-**Example...**
 
 ```html
     <div data-sesam-target="placeNameHere">
@@ -48,12 +45,9 @@ Let the script know which element will be collapsed
     </div>
 ```
 
-### Define collapse trigger element(s)
-Define which element will trigger the action. Multiple triggers can be defined, just add the same markup.
+### **2. Define collapse trigger element(s)** Define which element will trigger the action. Multiple triggers can be defined, just add the same markup.
 
 `data-sesam-trigger="placeNameHere"`
-
-**Example...**
 
 ```html
     <button data-sesam-trigger="placeNameHere">
@@ -61,7 +55,7 @@ Define which element will trigger the action. Multiple triggers can be defined, 
     </button>
 ```
 
-### Hide other sesam targets when element is triggered
+### **Extra! Hide other sesam targets when element is triggered**
 If you want that another Sesam target is hidden when you click a trigger, just define a group.
 
 **Add this to the parent element**
@@ -69,11 +63,10 @@ If you want that another Sesam target is hidden when you click a trigger, just d
 `data-sesam-group="groupNameHere"`
 
 **And define the parent for the children elements**
+
 This has to be added to the target element!
 
 `data-sesam-parent="groupNameHere"`
-
-**Example**
 
 ```html
     <div data-sesam-group="groupNameHere">
