@@ -20,7 +20,7 @@ import {sesam} from 'sesam-collapse';
 
 Just copy paste this link-tag in your site's head
 ```html
-    <link rel="stylesheet" href="https://sesam.git.lennertderyck.be/index.js">
+<link rel="stylesheet" href="https://sesam.git.lennertderyck.be/index.js">
 ```
 
 # Use
@@ -50,7 +50,9 @@ data-sesam-target="placeNameHere"
 
 ### **2. Define collapse trigger element(s)** Define which element will trigger the action. Multiple triggers can be defined, just add the same markup.
 
-`data-sesam-trigger="placeNameHere"`
+```html
+data-sesam-trigger="placeNameHere"
+`
 
 ```html
 <button data-sesam-trigger="placeNameHere">
