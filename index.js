@@ -1,4 +1,4 @@
-const sesam = {
+module.exports = sesamCollapse = {
     initialize() {
         console.log('\n' + `%c[service] sesam.js initialize() running! \n` + ' ', 'color: #00d400; font-weight: bold');
         console.log(`%c[service] initialize()`, 'font-weight: bold');
@@ -34,11 +34,11 @@ const sesam = {
 
         this.targetName = target;
         target = document.querySelector(`[data-sesam-target='${target}']`);
-
+        
         this.parent = target.dataset.sesamParent;
         this.parent = document.querySelectorAll(`[data-sesam-group="${this.parent}"] .sesam`);
         this.trigger = document.querySelector(`[data-sesam-trigger="${this.targetName}"]`);
-
+        
         // COLLAPSE TRIGGER
         if (this.trigger.classList.contains('sesam-show') == false) {
             this.itemShow(this.trigger);
@@ -53,7 +53,8 @@ const sesam = {
 
         // COLLAPSE TARGET
         if (target.classList.contains('sesam-show') == false) {
-            this.itemShow(target)
+            this.itemShow(target);
+            
         } else {
             this.itemHide(target)
 
@@ -62,6 +63,10 @@ const sesam = {
                 if (item.dataset.sesamTarget !== this.targetName) this.itemHide(item);
             });
         }
+        
+        // // TOGGLE CLASSES
+        // const switchClassesArray = this.trigger.dataset.sesamSwitchClass.replace(' ', '').split(',');
+        // this.switchClasses(target, switchClassesArray);
     },
 
     itemHide(el) {
@@ -83,7 +88,41 @@ const sesam = {
 
     ifClassFalseAddClass(itemToApply = item, checkThisClass) {
         if (itemToApply.classList.contains(checkThisClass) == false) itemToApply.classList.add(checkThisClass);
+    },
+    
+    switchClasses(el, classArray) {
+        if (el.classList.contains(classArray[0])) {
+            el.classList.toggle(classArray[0])
+            el.classList.toggle(classArray[1])
+        }
+        
+        // if (el.classList.includes(classArray[1])) {
+        //     el.classList.toggle(classArray[0])
+        //     el.classList.toggle(classArray[1])
+        // }
     }
-}
+}, sesam = (settings) => {
+    // element? = target, what to do?, add class?
+    console.log(settings)
+    sesamCollapse.collapseDo(settings.target);
+    
+    if (settings.class !== undefined) {
+        document.querySelector(`[data-sesam-target='${settings.target}']`).classList.add(settings.class.add)
+    }
+    
+    if (settings.class !== undefined) {
+        document.querySelector(`[data-sesam-target='${settings.target}']`).classList.remove(settings.class.remove)
+    }
+};
 
-module.exports.sesam = sesam;
+// HTMLElement.prototype.sesam = function(settings){
+//     if (settings.name != undefined) {
+//         this.setAttribute('data-sesam', settings.name);
+//         if (settings.action = 'show') {
+            
+//         }
+//     } else {
+//         console.log('name not set')
+//     }
+//     return [this, settings]
+// };

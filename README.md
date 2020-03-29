@@ -13,14 +13,14 @@ npm i sesam-collapse
 **2. Import package**
 
 ```javascript
-import {sesam} from 'sesam-collapse';
+const sesam = require('./node_modules/sesam-collapse'); // check the relative path to node_modules
 ```
 
 ### With a CDN
 
 Just copy paste this link-tag in your site's head
 ```html
-<link rel="stylesheet" href="https://sesam.git.lennertderyck.be/index.js">
+<link rel="stylesheet" href="https://unpkg.com/sesam-collapse">
 ```
 
 # Use
