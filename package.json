@@ -1,6 +1,6 @@
 {
   "name": "sesam-collapse",
-  "version": "2.0.7",
+  "version": "2.3.7",
   "description": "Use Sesam to create easy collapsing items on your site",
   "main": "index.js",
   "scripts": {
