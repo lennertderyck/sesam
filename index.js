@@ -106,6 +106,9 @@ module.exports = sesamCollapse = {
     console.log(settings)
     sesamCollapse.collapseDo(settings.target);
     
+    if (settings.execute !== undefined) {
+        settings.execute;
+    }
     if (settings.class !== undefined) {
         document.querySelector(`[data-sesam-target='${settings.target}']`).classList.add(settings.class.add)
     }
