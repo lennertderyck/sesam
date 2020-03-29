@@ -36,7 +36,26 @@ So sesam can be used in various ways.
 
 Possibilities are infinite!
 
-### **1. Define collapse target element** 
+### **1. Initialize Sesam**
+**In a javascript file**
+
+Just place it anywhere in a javascript file but make shure it's not launched before your DOM is loaded.
+
+```javascript
+sesamCollapse.initialize();
+```
+
+**In a html file**
+
+Add this just before `</body>` inside a `<script></script>` element
+
+```html
+<script>
+    sesamCollapse.initialize();
+</script>
+```
+
+### **2. Define collapse target element** 
 Let the script know which element will be collapsed
 
 ```html
@@ -49,7 +68,7 @@ data-sesam-target="placeNameHere"
 </div>
 ```
 
-### **2. Define collapse trigger element(s)** 
+### **3. Define collapse trigger element(s)** 
 Define which element will trigger the action. Multiple triggers can be defined, just add the same markup.
 
 ```html
