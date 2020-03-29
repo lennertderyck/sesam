@@ -109,10 +109,6 @@ module.exports = sesamCollapse = {
         // }
     }
 }, sesam = (settings) => {
-    // element? = target, what to do?, add class?
-    console.log(settings)
-    sesamCollapse.collapseDo(settings.target);
-    
     const target = document.querySelector(`[data-sesam-target='${settings.target}']`);
     
     if (settings.action !== undefined) {
@@ -123,6 +119,10 @@ module.exports = sesamCollapse = {
         if (settings.action == 'hide') {
             sesamCollapse.itemHide(target);
         }
+    }
+    
+    if (settings.collapse !== undefined && settings.collapse == true) {
+        sesamCollapse.collapseDo(settings.target);
     }
     
     if (settings.execute !== undefined) {
