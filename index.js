@@ -1,3 +1,10 @@
+/*!
+ * Sesam - https://github.com/lennertderyck/sesam
+ * Licensed under the GNU GPLv3 license - https://choosealicense.com/licenses/gpl-3.0/#
+ *
+ * Copyright (c) 2020 Lennert De Ryck
+ */
+
 module.exports = sesamCollapse = {
     initialize() {
         console.log('\n' + `%c[service] sesam.js initialize() running! \n` + ' ', 'color: #00d400; font-weight: bold');
@@ -106,15 +113,27 @@ module.exports = sesamCollapse = {
     console.log(settings)
     sesamCollapse.collapseDo(settings.target);
     
+    const target = document.querySelector(`[data-sesam-target='${settings.target}']`);
+    
+    if (settings.action !== undefined) {
+        if (settings.action == 'show') {
+            sesamCollapse.itemShow(target);
+        }
+        
+        if (settings.action == 'hide') {
+            sesamCollapse.itemHide(target);
+        }
+    }
+    
     if (settings.execute !== undefined) {
         settings.execute;
     }
     if (settings.class !== undefined) {
-        document.querySelector(`[data-sesam-target='${settings.target}']`).classList.add(settings.class.add)
+        target.classList.add(settings.class.add)
     }
     
     if (settings.class !== undefined) {
-        document.querySelector(`[data-sesam-target='${settings.target}']`).classList.remove(settings.class.remove)
+        target.classList.remove(settings.class.remove)
     }
 };
 
