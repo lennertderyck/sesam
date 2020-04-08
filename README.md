@@ -18,9 +18,20 @@ const sesam = require('./node_modules/sesam-collapse'); // check the relative pa
 
 ### With a CDN
 
-Just copy paste this link-tag in your site's head
+Just copy paste this script tag at the end of your dom. If you want to call Sesam functions in other scripts, place this before other scripts.
 ```html
-<link rel="stylesheet" href="https://unpkg.com/sesam-collapse">
+<script type="module" src="https://unpkg.com/sesam-collapse"></script>
+```
+
+
+> available from version 4.0
+
+or import in your javascript-files
+
+```js
+import {sesamCollapse, sesam} from 'https://unpkg.com/sesam-collapse';
+
+sesamCollapse.initialize();
 ```
 
 # Use
