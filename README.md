@@ -24,9 +24,10 @@ Just copy paste this script tag at the end of your dom. If you want to call Sesa
 ```
 
 
-> available from version 4.0
 
 or import in your javascript-files
+
+> available from version 4.0
 
 ```js
 import {sesamCollapse, sesam} from 'https://unpkg.com/sesam-collapse';
