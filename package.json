@@ -1,0 +1,24 @@
+{
+  "name": "sesam-collapse",
+  "version": "3.5.8",
+  "description": "Use Sesam to create easy collapsing items on your site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pub": "npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lennertderyck/sesam.git"
+  },
+  "keywords": [
+    "collapse",
+    "toggle"
+  ],
+  "author": "Lennert De Ryck",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/lennertderyck/sesam/issues"
+  },
+  "homepage": "https://github.com/lennertderyck/sesam#readme"
+}
