@@ -59,7 +59,7 @@ sesamCollapse.initialize();
 
 **In a html file**
 
-Add this just before `</body>` inside a `<script></script>` element
+Add this just before `</body>` inside a `<script>` element
 
 ```html
 <script>
@@ -93,6 +93,8 @@ data-sesam-trigger="placeNameHere"
 </button>
 ```
 
+Triggers and targets don't have to be placed directly next to each other, but can be placed anywhere in the document.
+
 ---
 
 ### **Extra! Hide other sesam targets when element is triggered**
@@ -113,12 +115,12 @@ data-sesam-parent="groupNameHere"
 ```
 
 ```html
-<div data-sesam-group="groupNameHere">
+<div data-sesam-group="groupNameHere"> <!-- this is the parent -->
     <div>
         <button data-sesam-trigger="collapseFirst">
             Show / hide
         </button>
-        <div data-sesam-target="collapseFirst" data-sesam-parent="groupNameHere">
+        <div data-sesam-target="collapseFirst" data-sesam-parent="groupNameHere"> <!-- data-sesam-parent should be the name of their parent -->
             <p>Some content</p>
         </div>
     </div>
@@ -132,8 +134,6 @@ data-sesam-parent="groupNameHere"
     </div>
 </div>
 ```
-
-
 
 <!-- [I'll npm](#install-npm)
 [I'll use a <link> (CDN)](#install-cdn) -->
