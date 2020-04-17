@@ -5,7 +5,7 @@
  * Copyright (c) 2020 Lennert De Ryck
  */
 
-module.exports = sesamCollapse = {
+export const sesamCollapse = {
     initialize() {
         console.log('\n' + `%c[service] sesam.js initialize() running! \n` + ' ', 'color: #00d400; font-weight: bold');
         console.log(`%c[service] initialize()`, 'font-weight: bold');
