@@ -5,7 +5,7 @@
  * Copyright (c) 2020 Lennert De Ryck
  */
 
-export const sesamCollapse = {
+const sesamCollapse = {
     initialize() {
         console.log('\n' + `%c[service] sesam.js initialize() running! \n` + ' ', 'color: #00d400; font-weight: bold');
         console.log(`%c[service] initialize()`, 'font-weight: bold');
@@ -136,6 +136,8 @@ export const sesamCollapse = {
         target.classList.remove(settings.class.remove)
     }
 };
+
+export {sesamCollapse, sesam};
 
 // HTMLElement.prototype.sesam = function(settings){
 //     if (settings.name != undefined) {
