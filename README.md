@@ -177,5 +177,26 @@ If you want that the user isn't able to scroll trough the rest of the page just 
 
 In future releases these data-attributes will be replaced with just attribute containing json-data.
 
+### Or do this all with just javascript
+```js
+sesam({
+    target: 'example', //doet dit: document.querySelector(`[data-sesam-target='${example}']`)
+    collapse: true, // gaat gewoon kijken wat de huidige state is van een target en die veranderen
+    action: 'show', // of 'hide', niet gebruiken in combinatie met collapse argument
+    execute: (() => { // voer extra javascript uit
+        console.log('this works!')
+    })(), 
+    classes: {
+        add: ['add','some','classes'],
+        remove: ['remove','some','classes']'
+    },
+    modal: {
+        backdrop: true, // voegt sesam-hidden/sesam-show classe toe aan het backdrop element, 
+                        //backdrop element wordt automatisch gemaakt bij het initialiseren
+        scrollBlock: true // blokkeert het scrollen door de pagina wanneer deze modal getoont wordt
+    }
+})
+```
+
 <!-- [I'll npm](#install-npm)
 [I'll use a <link> (CDN)](#install-cdn) -->
