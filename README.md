@@ -188,7 +188,7 @@ sesam({
     })(), 
     classes: {
         add: ['add','some','classes'],
-        remove: ['remove','some','classes']'
+        remove: ['remove','some','classes']
     },
     modal: {
         backdrop: true, // voegt sesam-hidden/sesam-show classe toe aan het backdrop element, 

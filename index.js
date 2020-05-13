@@ -119,26 +119,46 @@ const sesamCollapse = {
         else document.body.classList.remove('sesam-scrollBlock');
     }
 }, sesam = ({action, collapse, execute, classes, target, modal}) => {
-    target = document.querySelector(`[data-sesam-target='${target}']`);
+    const targetElement = document.querySelector(`[data-sesam-target='${target}']`);
+    console.log(targetElement);
     
     if (action !== undefined) {
-        if (action == 'show') sesamCollapse.itemShow(target);
-        if (action == 'hide') sesamCollapse.itemHide(target);
+        if (action == 'show') sesamCollapse.itemShow(targetElement);
+        if (action == 'hide') sesamCollapse.itemHide(targetElement);
     }
     
     if (collapse !== undefined && collapse == true) sesamCollapse.collapseDo(target);
     if (execute !== undefined) execute;
-    if (classes !== undefined) target.classList.add(classes.add);
-    if (classes !== undefined) target.classList.remove(classes.remove);
-    if (classes !== undefined) target.classList.remove(classes.remove);
-    if (modal.backdrop !== undefined) {
+    if (classes != undefined && classes.add !== undefined) classes.add.forEach(i => {targetElement.classList.add(i)});
+    if (classes != undefined && classes.remove !== undefined) classes.remove.forEach(i => {targetElement.classList.remove(i)});
+    if (modal != undefined && modal.backdrop !== undefined) {
         if (modal.backdrop == true) sesamCollapse.itemShow(sesamCollapse.backdrop);
         if (modal.backdrop == false) sesamCollapse.itemHide(sesamCollapse.backdrop);
     }
-    if (modal.scrollBlock !== undefined) {
+    if (modal != undefined && modal.scrollBlock !== undefined) {
         if (modal.scrollBlock == true) sesamCollapse.scrollBlock({ block: true })
         if (modal.scrollBlock == false) sesamCollapse.scrollBlock({ block: false })
     }
 };
 
 export {sesamCollapse, sesam};
+
+/*
+sesam({
+    target: 'example', //doet dit: document.querySelector(`[data-sesam-target='${example}']`)
+    collapse: true, // gaat gewoon kijken wat de huidige state is van een target en die veranderen
+    action: 'show', // of 'hide', niet gebruiken in combinatie met collapse argument
+    execute: (() => { // voer extra javascript uit
+        console.log('this works!')
+    })(), 
+    classes: {
+        add: ['add','some','classes'],
+        remove: ['remove','some','classes']
+    },
+    modal: {
+        backdrop: true, // voegt sesam-hidden/sesam-show classe toe aan het backdrop element, 
+                        //backdrop element wordt automatisch gemaakt bij het initialiseren
+        scrollBlock: true // blokkeert het scrollen door de pagina wanneer deze modal getoont wordt
+    }
+})
+*/
