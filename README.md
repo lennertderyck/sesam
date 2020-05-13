@@ -153,7 +153,7 @@ Just add ```data-sesam-backdrop="true"```to the target-element.
 
 Now you can write all the needed css to display a backdrop
 ```scss
-    .sesam-backdrop {
+.sesam-backdrop {
     position: fixed;
     top: 0px;
     bottom: 0px;
