@@ -1,6 +1,6 @@
 {
   "name": "sesam-collapse",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "Use Sesam to create easy collapsing items on your site",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,8 @@
   },
   "keywords": [
     "collapse",
-    "toggle"
+    "toggle",
+    "sesam"
   ],
   "author": "Lennert De Ryck",
   "license": "AGPL-3.0-or-later",
