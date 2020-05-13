@@ -120,7 +120,6 @@ const sesamCollapse = {
     }
 }, sesam = ({action, collapse, execute, classes, target, modal}) => {
     const targetElement = document.querySelector(`[data-sesam-target='${target}']`);
-    console.log(targetElement);
     
     if (action !== undefined) {
         if (action == 'show') sesamCollapse.itemShow(targetElement);
