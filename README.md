@@ -17,16 +17,18 @@ import {sesamCollapse, sesam} from 'sesam-collapse';
 ```
 
 ### With a CDN
+**1. Install package**
 Just copy paste this script tag at the end of your dom. If you want to call Sesam functions in other scripts, place this before other scripts.
 ```html
 <script type="module" src="https://unpkg.com/sesam-collapse"></script>
 ```
+**2. Install package**
 Initialize in your javascript-file.
 ```js
 sesamCollapse.initialize();
 ```
 
-or import it in your javascript-files
+**or import it in your javascript-files**
 > available from version 4.0
 
 ```js
