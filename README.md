@@ -177,7 +177,7 @@ If you want that the user isn't able to scroll trough the rest of the page just 
 
 In future releases these data-attributes will be replaced with just attribute containing json-data.
 
-### Or do this all with just javascript
+### Or you can just use javascript
 ```js
 sesam({
     target: 'example', //doet dit: document.querySelector(`[data-sesam-target='${example}']`)
