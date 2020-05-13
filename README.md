@@ -21,6 +21,10 @@ Just copy paste this script tag at the end of your dom. If you want to call Sesa
 ```html
 <script type="module" src="https://unpkg.com/sesam-collapse"></script>
 ```
+Initialize in your javascript-file.
+```js
+sesamCollapse.initialize();
+```
 
 or import it in your javascript-files
 > available from version 4.0
@@ -144,7 +148,7 @@ Just add ```data-sesam-backdrop="true"```to the target-element.
 ```
 
 Now you can write all the needed css to display a backdrop
-```sass
+```scss
     .sesam-backdrop {
     position: fixed;
     top: 0px;
