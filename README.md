@@ -13,20 +13,16 @@ npm i sesam-collapse
 **2. Import package**
 
 ```javascript
-const sesam = require('./node_modules/sesam-collapse'); // check the relative path to node_modules
+import {sesamCollapse, sesam} from 'sesam-collapse';
 ```
 
 ### With a CDN
-
 Just copy paste this script tag at the end of your dom. If you want to call Sesam functions in other scripts, place this before other scripts.
 ```html
 <script type="module" src="https://unpkg.com/sesam-collapse"></script>
 ```
 
-
-
-or import in your javascript-files
-
+or import it in your javascript-files
 > available from version 4.0
 
 ```js
