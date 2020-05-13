@@ -95,14 +95,14 @@ data-sesam-trigger="placeNameHere"
 
 Triggers and targets don't have to be placed directly next to each other, but can be placed anywhere in the document.
 
----
-
-### **Extra! Hide other sesam targets when element is triggered**
+### **4. EXTRA OPTIONS**
+### Hide other collapse elements when a collapse is triggered
 If you want that another Sesam target is hidden when you click a trigger, just define a group.
 
 **Add this to the parent element**
 
 ```html
+<!-- this is the attribute -->
 data-sesam-group="groupNameHere"
 ```
 
@@ -111,8 +111,10 @@ data-sesam-group="groupNameHere"
 This has to be added to the target element!
 
 ```html
+<!-- this is the attribute -->
 data-sesam-parent="groupNameHere"
 ```
+**Result**
 
 ```html
 <div data-sesam-group="groupNameHere"> <!-- this is the parent -->
@@ -134,6 +136,42 @@ data-sesam-parent="groupNameHere"
     </div>
 </div>
 ```
+### Show a background when you collapse
+When you want to create a modal (a screen that appears over other content), you can activate the backdrop.
+The backdrop is automatically added when you initialize the script.
+
+Just add ```data-sesam-backdrop="true"```to the target-element.
+```html
+<div data-sesam-target="placeNameHere" data-sesam-backdrop="true">
+    <p>Some content</p>
+</div>
+```
+
+Now you can write all the needed css to display a backdrop
+```sass
+    .sesam-backdrop {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 9;
+    background-color: rgba(0, 0, 0, 0.336);
+    
+    &.sesam-hidden {
+        display: none;
+    }
+}
+```
+
+If you want that the user isn't able to scroll trough the rest of the page just add this to your target-element
+```html
+<div data-sesam-target="placeNameHere" data-sesam-backdrop="true" data-sesam-scrollblock="true">
+    <p>Some content</p>
+</div>
+```
+
+In future releases these data-attributes will be replaced with just attribute containing json-data.
 
 <!-- [I'll npm](#install-npm)
 [I'll use a <link> (CDN)](#install-cdn) -->
