@@ -1,6 +1,8 @@
 ![sesam banner](https://res.cloudinary.com/lennertderyck/image/upload/v1585256935/BANNER_SESAM_za3b6v.svg)
 <p style="text-align: center;">Use Sesam to create easy collapsing items on your site</p>
 
+#### [1. INSTALL](#install)  |  [2. USE](#use)  |  [OPTIONS](#options)  |  [API](#api)
+
 # Install
 ### Option 1: With NPM
 
