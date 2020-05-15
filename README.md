@@ -2,7 +2,7 @@
 <p style="text-align: center;">Use Sesam to create easy collapsing items on your site</p>
 
 # Install
-### With NPM
+### Option 1: With NPM
 
 **1. Install package**
 
@@ -16,7 +16,7 @@ npm i sesam-collapse
 import {sesamCollapse, sesam} from 'sesam-collapse';
 ```
 
-### Import from a CDN
+### Option 2: Import from a CDN
 > available from version 4.0
 ```js
 import {sesamCollapse, sesam} from 'https://unpkg.com/sesam-collapse';
@@ -24,7 +24,7 @@ import {sesamCollapse, sesam} from 'https://unpkg.com/sesam-collapse';
 sesamCollapse.initialize();
 ```
 
-### From a CDN
+### Option 3: From a CDN
 **1. Install package**
 
 Just copy paste this script tag at the end of your dom. If you want to call Sesam functions in other scripts, place this before other scripts.
@@ -51,7 +51,7 @@ So sesam can be used in various ways.
 
 Possibilities are infinite!
 
-### **1. DEFINE A TARGET ELEMENT** 
+### **Step 1. DEFINE A TARGET ELEMENT** 
 Let the script know which element will be collapsed
 
 ```html
@@ -64,7 +64,7 @@ data-sesam-target="placeNameHere"
 </div>
 ```
 
-### **2. DEFINE A TRIGGER ELEMENT** 
+### **Step 2. DEFINE A TRIGGER ELEMENT** 
 Define which element will trigger the action. Multiple triggers can be defined, just add the same markup.
 
 ```html
