@@ -174,7 +174,7 @@ This will be available later.
 
 ---
 
-> In future releases these data-attributes will be replaced with just attribute containing json-data.
+> In future releases all these data-attributes will be replaced with just the data-sesam-options attribute.
 
 # API
 ```js
