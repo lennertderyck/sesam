@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>pgm.gent | Graduaat Programmeren Arteveldehogeschool</title>
+
+    <!-- meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type='image/png' href="https://lennertderyck.be/assets/images/LOGO_LDR_ZWART.ico"/>
+    <!-- <meta name="theme-color" content="#662B32">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#662B32">
+     -->
+
+    <!-- seo -->
+    <meta name="description" content="Sesam | Easy collapsing items on your site">
+    <meta name="keywords" content="sesam, collapse, toggle, css, javascripts, toggle">
+    
+    <!-- open graph -->
+    <meta property="og:type" content="website"/>
+    <!-- <meta property="og:url" content="pgm.gent"/> -->
+    <meta property="og:title" content="Sesam | Easy collapsing items on your site"/>
+    <!-- <meta property="og:image" content=""/> -->
+    
+    <!-- integrations -->
+    <!-- <script src="https://ce.lennertderyck.be/library/elements.js"></script> -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body class="py-5">
+<header></header>
+<main data-markdown class="container">
+
+</main>
+    
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+    const markdownElements = document.querySelectorAll('[data-markdown]');
+    markdownElements.forEach(i => {
+        console.log(marked(i.innerHTML))
+        if (i.dataset.markdown == 'code') {
+            i.innerHTML = marked(i.innerHTML).replace('\t', '');
+        } else {
+            i.innerHTML = marked(i.innerText);
+        }
+    });
+</script>
+</body>
+</html>
