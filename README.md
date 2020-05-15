@@ -101,21 +101,7 @@ data-sesam-parent="groupNameHere"
 
 ### Using data-sesam-options
 
-**Define the parent element**
-
-Add this to the parent
-```html
-<!-- this is the attribute -->
-data-sesam-group="groupNameHere"
-```
-
-**Add the option to the target**
-
-This has to be added to the target element!
-```html
-<!-- this is the attribute -->
-data-sesam-options="parent:groupNameHere"
-```
+This will be available later.
 
 ## Show a backdrop
 
@@ -170,7 +156,12 @@ If you want that the user isn't able to scroll trough the rest of the page just 
 ```
 
 ### Using data-sesam-options
-This will be available later.
+
+```html
+<div data-sesam-target="placeNameHere" data-sesam-options="backdrop:true, scrollBlock:true">
+    <p>Some content</p>
+</div>
+```
 
 ---
 
