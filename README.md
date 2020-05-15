@@ -31,7 +31,7 @@ Just copy paste this script tag at the end of your dom. If you want to call Sesa
 ```html
 <script type="module" src="https://unpkg.com/sesam-collapse"></script>
 ```
-**2. Install package**
+**2. Initialize package**
 
 Initialize in your javascript-file.
 ```js
