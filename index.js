@@ -46,7 +46,6 @@ const sesamCollapse = {
     },
     
     collapse(element) {
-        console.log(element);
         const itemState = this.itemState(element);
         
         if (itemState == true) this.itemShow(element);
@@ -54,12 +53,19 @@ const sesamCollapse = {
         
         // execute if collapse element is target
         if (element.dataset.sesamTarget != undefined && itemState == true) {
-            this.targetOptions(element);
-            this.optionsMap.get('backdrop') == 'true' || element.dataset.sesamBackdrop == 'true' ? this.itemShow(this.backdrop) : null;
-            this.optionsMap.get('scrollBlock') == 'true' || element.dataset.scrollblock == 'true' ? this.scrollBlock({ block: true }) : null;
+            element.dataset.sesamBackdrop == 'true' ? this.itemShow(this.backdrop) : null;
+            element.dataset.sesamScrollblock == 'true' ? this.scrollBlock({ block: true }) : null;
+            element.dataset.sesamParent != undefined ? this.hideOtherChildren(element) : null;
+            
+            if (element.dataset.sesamOptions != undefined) {
+                this.targetOptions(element);
+                this.optionsMap.get('backdrop') == 'true' ? this.itemShow(this.backdrop) : null;
+                this.optionsMap.get('scrollBlock') == 'true' ? this.scrollBlock({ block: true }) : null;
+                // this.optionsMap.has('parent') == true ? this.hideOtherChildren(this.optionsMap.get('parent')) : null;
+            }
         } else if (element.dataset.sesamTarget != undefined && itemState == false) {
-            this.optionsMap.get('backdrop') == 'true' || element.dataset.sesamBackdrop == 'true' ? this.itemHide(this.backdrop) : null;
-            this.optionsMap.get('scrollBlock') == 'true' || element.dataset.scrollblock == 'true' ? this.scrollBlock({ block: false }) : null;
+            this.itemHide(this.backdrop);
+            this.scrollBlock({ block: false });
         }
     },
     
@@ -77,12 +83,11 @@ const sesamCollapse = {
         });
     },
     
-    targetAPI(element) {
-        this.targetOptions(element);
-        this.optionsMap.get('backdrop') == 'true' ? console.log('backdrop') : null;
-        this.optionsMap.get('scrollBlock') == 'true' ? console.log('scrollBlock') : null;
-        this.optionsMap.has('animateIn') ? console.log('animateIn ', this.optionsMap.get('animateIn')) : null;
-        this.optionsMap.get('backdrop') == 'true' ? console.log('backdrop') : null;
+    hideOtherChildren(element) {
+        const otherChildren = document.querySelectorAll(`[data-sesam-group="${element.dataset.sesamParent}"] .sesam:not([data-sesam-target="${element.dataset.sesamTarget}"]):not([data-sesam-trigger="${element.dataset.sesamTarget}"])`);
+        otherChildren.forEach(i => {
+            this.itemHide(i);
+        })
     },
     
     itemHide(element) {
@@ -107,7 +112,6 @@ const sesamCollapse = {
         else document.body.classList.remove('sesam-scrollBlock');
     }
 }, sesam = ({action, collapse, execute, classes, target, modal}) => {
-    console.log('sesam');
     target = document.querySelector(`[data-sesam-target='${target}']`);
     
     action != undefined && action == 'show' ? sesamCollapse.itemShow(target) : null;
