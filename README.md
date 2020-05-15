@@ -16,7 +16,15 @@ npm i sesam-collapse
 import {sesamCollapse, sesam} from 'sesam-collapse';
 ```
 
-### With a CDN
+### Import from a CDN
+> available from version 4.0
+```js
+import {sesamCollapse, sesam} from 'https://unpkg.com/sesam-collapse';
+
+sesamCollapse.initialize();
+```
+
+### From a CDN
 **1. Install package**
 
 Just copy paste this script tag at the end of your dom. If you want to call Sesam functions in other scripts, place this before other scripts.
@@ -27,15 +35,6 @@ Just copy paste this script tag at the end of your dom. If you want to call Sesa
 
 Initialize in your javascript-file.
 ```js
-sesamCollapse.initialize();
-```
-
-**or import it in your javascript-files**
-> available from version 4.0
-
-```js
-import {sesamCollapse, sesam} from 'https://unpkg.com/sesam-collapse';
-
 sesamCollapse.initialize();
 ```
 
@@ -99,12 +98,13 @@ data-sesam-trigger="placeNameHere"
 
 Triggers and targets don't have to be placed directly next to each other, but can be placed anywhere in the document.
 
-### **4. EXTRA OPTIONS**
-### Hide other collapse elements when a collapse is triggered
+# Options
+## Hide other collapse elements when a collapse is triggered
 If you want that another Sesam target is hidden when you click a trigger, just define a group.
 
-**Add this to the parent element**
+### Using attributes
 
+**Add this to the parent element**
 ```html
 <!-- this is the attribute -->
 data-sesam-group="groupNameHere"
@@ -113,36 +113,35 @@ data-sesam-group="groupNameHere"
 **And define the parent for the children elements**
 
 This has to be added to the target element!
-
 ```html
 <!-- this is the attribute -->
 data-sesam-parent="groupNameHere"
 ```
-**Result**
 
+### Using data-sesam-options
+
+**Define the parent element**
+
+Add this to the parent
 ```html
-<div data-sesam-group="groupNameHere"> <!-- this is the parent -->
-    <div>
-        <button data-sesam-trigger="collapseFirst">
-            Show / hide
-        </button>
-        <div data-sesam-target="collapseFirst" data-sesam-parent="groupNameHere"> <!-- data-sesam-parent should be the name of their parent -->
-            <p>Some content</p>
-        </div>
-    </div>
-    <div>
-        <button data-sesam-trigger="collapseSecond">
-            Show / hide
-        </button>
-        <div data-sesam-target="collapseSecond" data-sesam-parent="groupNameHere">
-            <p>Some content</p>
-        </div>
-    </div>
-</div>
+<!-- this is the attribute -->
+data-sesam-group="groupNameHere"
 ```
-### Show a background when you collapse
-When you want to create a modal (a screen that appears over other content), you can activate the backdrop.
+
+**Add the option to the target**
+
+This has to be added to the target element!
+```html
+<!-- this is the attribute -->
+data-sesam-options="parent:groupNameHere"
+```
+
+## Show a backdrop
+
+If you use Sesam for creating modals you can activate the backdrop function. This will show a background behind the modal.
 The backdrop is automatically added when you initialize the script.
+
+### Using attributes
 
 Just add ```data-sesam-backdrop="true"```to the target-element.
 ```html
@@ -150,6 +149,15 @@ Just add ```data-sesam-backdrop="true"```to the target-element.
     <p>Some content</p>
 </div>
 ```
+
+### Using data-sesam-options
+
+```html
+<!-- this is the attribute -->
+data-sesam-options="anOtherOption:optionValue, backdrop:true"
+```
+
+### Add css
 
 Now you can write all the needed css to display a backdrop
 ```scss
@@ -168,16 +176,26 @@ Now you can write all the needed css to display a backdrop
 }
 ```
 
-If you want that the user isn't able to scroll trough the rest of the page just add this to your target-element
+## Scrollblock
+
+If you want that the user isn't able to scroll trough the rest of the page just add this to your target-element.
+
+### Using attributes
+
 ```html
-<div data-sesam-target="placeNameHere" data-sesam-backdrop="true" data-sesam-scrollblock="true">
+<div data-sesam-target="placeNameHere" data-sesam-scrollblock="true">
     <p>Some content</p>
 </div>
 ```
 
-In future releases these data-attributes will be replaced with just attribute containing json-data.
+### Using data-sesam-options
+This will be available later.
 
-### Or you can just use javascript
+---
+
+> In future releases these data-attributes will be replaced with just attribute containing json-data.
+
+# API
 ```js
 sesam({
     target: 'example', //doet dit: document.querySelector(`[data-sesam-target='${example}']`)
@@ -185,18 +203,11 @@ sesam({
     action: 'show', // of 'hide', niet gebruiken in combinatie met collapse argument
     execute: (() => { // voer extra javascript uit
         console.log('this works!')
-    })(), 
-    classes: {
-        add: ['add','some','classes'],
-        remove: ['remove','some','classes']
-    },
+    })(),
     modal: {
         backdrop: true, // voegt sesam-hidden/sesam-show classe toe aan het backdrop element, 
-                        //backdrop element wordt automatisch gemaakt bij het initialiseren
+                        // backdrop element wordt automatisch gemaakt bij het initialiseren
         scrollBlock: true // blokkeert het scrollen door de pagina wanneer deze modal getoont wordt
     }
 })
 ```
-
-<!-- [I'll npm](#install-npm)
-[I'll use a <link> (CDN)](#install-cdn) -->
