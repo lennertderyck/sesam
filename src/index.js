@@ -1,10 +1,3 @@
-/*!
- * Sesam - https://github.com/lennertderyck/sesam
- * Licensed under the GNU GPLv3 license - https://choosealicense.com/licenses/gpl-3.0/#
- *
- * Copyright (c) 2020 Lennert De Ryck
- */
-
 const sesamCollapse = {
     initialize() {
         console.log('\n' + `%c[service] sesam.js initialize() running! \n` + ' ', 'color: #00d400; font-weight: bold');
