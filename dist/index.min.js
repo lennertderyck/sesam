@@ -1,6 +1,6 @@
 
 /*!
-* Sesam 5.2.9 - https://github.com/lennertderyck/sesam
+* Sesam 5.3.0 - https://github.com/lennertderyck/sesam
 * Licensed under the GNU GPLv3 license - https://choosealicense.com/licenses/gpl-3.0/#
 *
 * Copyright (c) 2020 Lennert De Ryck
