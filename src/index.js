@@ -94,10 +94,12 @@ const sesamCollapse = {
     },
     
     addBackdrop() {
-        this.backdrop = document.createElement('div');
-        this.backdrop.setAttribute('data-label','sesamBackdrop');
-        this.backdrop.classList.add('sesam','sesam-hidden','sesam-backdrop');
-        document.body.appendChild(this.backdrop);
+        if (document.querySelector('[data-label="sesamBackdrop"]') == null) {
+            this.backdrop = document.createElement('div');
+            this.backdrop.setAttribute('data-label','sesamBackdrop');
+            this.backdrop.classList.add('sesam','sesam-hidden','sesam-backdrop');
+            document.body.appendChild(this.backdrop);
+        }
     },
     
     scrollBlock({ block }) {

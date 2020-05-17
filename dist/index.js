@@ -1,6 +1,6 @@
 
 /*!
-* Sesam 5.2.7 - https://github.com/lennertderyck/sesam
+* Sesam 5.2.9 - https://github.com/lennertderyck/sesam
 * Licensed under the GNU GPLv3 license - https://choosealicense.com/licenses/gpl-3.0/#
 *
 * Copyright (c) 2020 Lennert De Ryck
@@ -102,10 +102,12 @@ const sesamCollapse = {
     },
     
     addBackdrop() {
-        this.backdrop = document.createElement('div');
-        this.backdrop.setAttribute('data-label','sesamBackdrop');
-        this.backdrop.classList.add('sesam','sesam-hidden','sesam-backdrop');
-        document.body.appendChild(this.backdrop);
+        if (document.querySelector('[data-label="sesamBackdrop"]') == null) {
+            this.backdrop = document.createElement('div');
+            this.backdrop.setAttribute('data-label','sesamBackdrop');
+            this.backdrop.classList.add('sesam','sesam-hidden','sesam-backdrop');
+            document.body.appendChild(this.backdrop);
+        }
     },
     
     scrollBlock({ block }) {
