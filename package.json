@@ -1,12 +1,11 @@
 {
   "name": "sesam-collapse",
-  "version": "5.3.0",
+  "version": "5.3.2",
   "description": "Use Sesam to create easy collapsing items on your site",
   "main": "./dist/index.min.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "node compile.js",
-    "pub": "npm publish"
+    "publish": "npm publish"
   },
   "repository": {
     "type": "git",
