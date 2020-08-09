@@ -104,12 +104,11 @@ const sesamCollapse = {
         if (block == true) document.body.classList.add('sesam-scrollBlock');
         else document.body.classList.remove('sesam-scrollBlock');
     }
-}, sesam = ({action, collapse, execute, classes, target, modal}) => {
+}, sesam = ({action, collapse, execute, classes, target, modal}, callback) => {
     target = document.querySelector(`[data-sesam-target='${target}']`);
     action != undefined && action == 'show' ? sesamCollapse.itemShow(target) : null;
     action != undefined && action == 'hide' ? sesamCollapse.itemHide(target) : null;
     collapse != undefined && collapse == true ? sesamCollapse.collapse(target) : null;
-    execute != undefined ? execute : null;
     if (modal != undefined && modal.backdrop !== undefined) {
         modal.backdrop == true ? sesamCollapse.itemShow(sesamCollapse.backdrop) : null;
         modal.backdrop == false ? sesamCollapse.itemHide(sesamCollapse.backdrop) : null;
@@ -118,6 +117,8 @@ const sesamCollapse = {
         modal.scrollBlock == true ? sesamCollapse.scrollBlock({ block: true }) : null;
         modal.scrollBlock == false ? sesamCollapse.scrollBlock({ block: false }) : null;
     }
+    
+    callback ? callback() : null;
 };
 
 export {sesamCollapse, sesam};
