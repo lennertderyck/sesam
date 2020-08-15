@@ -1,6 +1,7 @@
 const minify = require('minify');
 const fs = require('fs');
-const package =  require('./package.json');
+const package = require('./package.json');
+const babel = require("@babel/core");
 
 const copyright = `
 /*!
@@ -18,6 +19,13 @@ const options = {
             removeAttributeQuotes: false,
             removeOptionalTags: false
         },
+    },
+    babel: {
+        plugins: [
+            "@babel/plugin-transform-arrow-functions", 
+            "@babel/plugin-transform-modules-commonjs"
+        ],
+        presets: ["minify"]
     },
     src: './src/index.js',
     out: './dist/'
@@ -44,9 +52,18 @@ const write = {
         .catch(console.error);
     },
     
+    async legacy() {
+        try {
+            const parsed = await babel.transformFileAsync(options.src, options.babel)
+            fs.writeFileSync(options.out + 'legacy.min.js', copyright + parsed.code);
+            console.log('Saved!');
+        } catch {console.log(`${options.src} couldn't be parsed by Babel`)}
+    },
+    
     all() {
         write.normal();
         write.minified();
+        write.legacy();
     }
 }
 
